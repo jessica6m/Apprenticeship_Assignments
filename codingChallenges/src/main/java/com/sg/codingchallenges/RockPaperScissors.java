@@ -41,14 +41,14 @@ public class RockPaperScissors {
         stringNumRounds = myScanner.nextLine();
         numRounds = Integer.parseInt(stringNumRounds);
 
-        if (numRounds < 1 && numRounds > 10) {
+        if (numRounds < 1 || numRounds > 10) {
             System.out.println("<Error>");
             System.out.println("<Run Program again>");
             System.out.println("You can only choose between 1-10 rounds");
 
-        }
+        } else {
 
-        for (int i = 0; i < numRounds && i < 11; i++) {
+        for (int i = 0; i < numRounds && i < 10; i++) {
 
             int randNum = randomizer.nextInt(2);
 
@@ -113,6 +113,7 @@ public class RockPaperScissors {
             }
           //  System.out.println("Thanks for playing");
         }
-        System.out.println("Thanks for playing");
+         System.out.println("Thanks for playing");
     }
+  }
 }
