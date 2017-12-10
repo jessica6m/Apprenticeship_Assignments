@@ -47,6 +47,8 @@ public class RockPaperScissors {
             System.out.println("You can only choose between 1-10 rounds");
 
         } else {
+            
+            while(numRounds >0 && numRounds < 10){
 
         for (int i = 0; i < numRounds && i < 10; i++) {
 
@@ -93,27 +95,36 @@ public class RockPaperScissors {
                 } else if (randNum == scissors) {
                     wins++;
                 }
-                System.out.println("You won " + wins + " against me");
+            }   
+        }
+         System.out.println("You won " + wins + " against me");
                 System.out.println("You lost " + losses + " against me");
                 System.out.println("You tied " + ties + " against the me");
 
                 if (wins > losses) {
                     System.out.println("You are the winner congrats!!");
+                    wins = 0;
+                    losses = 0;
+                    ties = 0;
                 } else if (wins < losses) {
                     System.out.println("Sorry you lost");
-                } else if (wins % losses == 0 || losses % wins == 0) {
+                    wins = 0;
+                    losses = 0;
+                    ties = 0;
+                } else if (wins == losses) {
                     System.out.println("We've tied");
+                    wins = 0;
+                    ties = 0;
+                    losses = 0;
                 }
-
-                System.out.println("Do you want to play again?");
-                System.out.println("If so how many times? Enter 0 to exit");
-                stringNumRounds = myScanner.nextLine();
-                numRounds = Integer.parseInt(stringNumRounds);
-                numRounds = numRounds;
-            }
-          //  System.out.println("Thanks for playing");
-        }
+                
+                
+            System.out.println("Do you want to play again?");
+            System.out.println("If so how many times? Enter 0 to exit");
+            stringNumRounds = myScanner.nextLine();
+            numRounds = Integer.parseInt(stringNumRounds);
          System.out.println("Thanks for playing");
+      }
     }
   }
 }
