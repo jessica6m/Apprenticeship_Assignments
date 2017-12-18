@@ -57,7 +57,7 @@ public class RockPaperScissors {
             System.out.println("What do you choose rock, paper, or scissors?");
             stringChoice = myScanner.nextLine();
 
-            if (stringChoice.equals("rock") || stringChoice.equals("Rock")) {
+            if (stringChoice.equalsIgnoreCase("r")) {
                 choice = rock;
 
                 if (choice == randNum) {
@@ -69,19 +69,11 @@ public class RockPaperScissors {
                 } else if (randNum == scissors) {
                     wins++;
                 }
-                 
                 
-                if (wins > losses) {
-                    System.out.println("You Won this Round");
-                } else if (wins < losses) {
-                    System.out.println("Sorry you lost this Rounds");
-                } else {
-                    System.out.println("We've tied");
-                }
+                        calculateWinner(wins, losses);
+                        
 
-                  
-
-            } else if (stringChoice.equals("paper") || stringChoice.equals("Paper")) {
+            } else if (stringChoice.equalsIgnoreCase("p")) {
                 choice = paper;
 
                 if (choice == randNum) {
@@ -94,16 +86,10 @@ public class RockPaperScissors {
                     wins++;
                 }
                 
-                     if (wins > losses) {
-                    System.out.println("You Won this Round");
-                } else if (wins < losses) {
-                    System.out.println("Sorry you lost this Rounds");
-                } else {
-                    System.out.println("We've tied");
-                }
+                        calculateWinner(wins, losses);
 
 
-            } else if (stringChoice.equals("scissors") || stringChoice.equals("Scissors")) {
+            } else if (stringChoice.equalsIgnoreCase("s")) {
                 choice = scissors;
 
                 if (choice == randNum) {
@@ -116,13 +102,7 @@ public class RockPaperScissors {
                     wins++;
                 } 
                 
-                     if (wins > losses) {
-                    System.out.println("You Won this Round");
-                } else if (wins < losses) {
-                    System.out.println("Sorry you lost this Round");
-                } else {
-                    System.out.println("We've tied");
-                }
+                     calculateWinner(wins, losses);
 
                 
             } else {
@@ -154,11 +134,21 @@ public class RockPaperScissors {
                 
                 
             System.out.println("Do you want to play again?");
-            System.out.println("If so, how many times? Enter 0 to exit");
+            System.out.println("If so, how many times? \n Only 1 to 10 rounds \n(Enter 0 to exit)");
             stringNumRounds = myScanner.nextLine();
             numRounds = Integer.parseInt(stringNumRounds);
          System.out.println("Thanks for playing");
       }
     }
   }
+
+    public static void calculateWinner(int wins, int losses) {
+        if (wins > losses) {
+            System.out.println("You Won this Round");
+        } else if (wins < losses) {
+            System.out.println("Sorry you lost this Rounds");
+        } else {
+            System.out.println("We've tied");
+        }
+    }
 }
