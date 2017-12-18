@@ -43,15 +43,22 @@ public class App {
         secondVal = readValue("What is the second number that you would like to calculate?\n");
         
         
-         if (operation.equals("+")) {
-         System.out.println(mySimpleCalculator.addNums(firstVal, secondVal));
-        } else if (operation.equals("-")){
-          System.out.println(mySimpleCalculator.subtractNums(firstVal, secondVal));
-        } else if (operation.equals("*")) {
-             System.out.println(mySimpleCalculator.multiplyNums(firstVal, secondVal)); 
-        } else if(operation.equals("/")) {
-           System.out.println(mySimpleCalculator.divideNums(firstVal, secondVal));
-        } 
+            switch (operation) {
+                case "+":
+                    System.out.println(mySimpleCalculator.addNums(firstVal, secondVal));
+                    break;
+                case "-":
+                    System.out.println(mySimpleCalculator.subtractNums(firstVal, secondVal));
+                    break;
+                case "*":
+                    System.out.println(mySimpleCalculator.multiplyNums(firstVal, secondVal)); 
+                    break;
+                case "/":
+                    System.out.println(mySimpleCalculator.divideNums(firstVal, secondVal));
+                    break;
+                default:
+                    break;
+            }
          
         
            System.out.println("Do you want to calculate again?");
