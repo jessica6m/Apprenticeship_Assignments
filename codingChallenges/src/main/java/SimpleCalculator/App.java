@@ -35,7 +35,7 @@ public class App {
         System.out.println("Enter + for Addition \nEnter - for Subtraction");
         System.out.println("Enter * for Multiplication \n Enter / for Divison");
         operation = myScanner.nextLine();
-         if(!(operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/"))){
+         while(!(operation.equals("+") || operation.equals("-") || operation.equals("*") || operation.equals("/"))){
             System.out.println("Please enter a correct operation");
             operation = myScanner.nextLine();
         }    
