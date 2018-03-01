@@ -193,7 +193,7 @@ public class FlooringProgramView {
     }
      
      public void displayAddOrderSucessBanner(){
-        io.print("You have sucessfully removed your order");
+        io.print("You have sucessfully added your order");
     }
 
 }
