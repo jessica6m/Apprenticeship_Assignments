@@ -1,1 +1,1 @@
-# codingChallenges
+# Apprenticeship Assignments
